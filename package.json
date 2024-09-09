@@ -1,0 +1,48 @@
+{
+  "name": "@turbo-portfolio/root",
+  "license": "MIT",
+  "private": true,
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1",
+  "scripts": {
+    "changeset": "changeset",
+    "clean": "git clean -xdf node_modules",
+    "dev": "turbo dev --parallel --continue",
+    "format": "prettier --write \"**/*.{ts,tsx,cts,mts,js,jsx,mjs,cjs,json,yaml,yml,css,html,md,mdx}\" --ignore-unknown --cache",
+    "lint": "turbo lint",
+    "prepare": "husky",
+    "typecheck": "turbo typecheck",
+    "build:web": "turbo build --filter=@turbo-portfolio/web",
+    "clean:house": "cd apps/web && rm -rf node_modules .turbo .next && cd ../../tooling/eslint && rm -rf node_modules .turbo && cd ../prettier && rm -rf node_modules .turbo && cd ../typescript && rm -rf .turbo node_modules && cd ../jest-presets && rm -rf node_modules .turbo && cd ../.. && rm -rf node_modules pnpm-lock.yaml && pnpm install",
+    "generate:base64": "openssl rand -base64 64",
+    "generate:hex": "openssl rand -hex 64",
+    "npm:registry": "npm set registry https://registry.npmjs.org",
+    "run:web": "turbo dev --filter=@turbo-portfolio/web",
+    "sync:time": "sudo ntpdate time.windows.com",
+    "latest:pnpm": "corepack use pnpm@latest",
+    "update:pnpm": "curl -fsSL https://get.pnpm.io/install.sh | sh -"
+  },
+  "devDependencies": {
+    "@changesets/cli": "latest",
+    "@turbo-portfolio/eslint-config": "workspace:*",
+    "@turbo-portfolio/prettier-config": "workspace:*",
+    "@turbo-portfolio/tsconfig": "workspace:*",
+    "@total-typescript/ts-reset": "latest",
+    "@types/node": "latest",
+    "dotenv": "latest",
+    "dotenv-cli": "latest",
+    "dotenv-expand": "latest",
+    "eslint": "latest",
+    "husky": "latest",
+    "prettier": "latest",
+    "tsx": "latest",
+    "turbo": "latest",
+    "typescript": "latest",
+    "vercel": "latest"
+  },
+  "prettier": "@turbo-portfolio/prettier-config",
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10",
+    "pnpm": ">=9"
+  }
+}

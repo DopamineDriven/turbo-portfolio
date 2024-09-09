@@ -1,0 +1,5 @@
+.vercel
+.turbo
+.env
+.env.*
+notes.md

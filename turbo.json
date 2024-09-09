@@ -1,0 +1,70 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": []
+    },
+    "lint": {
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "typecheck": {
+      "dependsOn": ["^build"]
+    },
+    "clean": {
+      "cache": false
+    }
+  },
+  "ui": "tui",
+  "globalEnv": [
+    "__NEXT_PROCESSED_ENV",
+    "AUTH_TOKEN",
+    "CI_ENV",
+    "CLOUDINARY_API_KEY",
+    "CLOUDINARY_API_SECRET",
+    "CLOUDINARY_CLOUD_NAME",
+    "CLOUDINARY_URL",
+    "COREPACK_ENABLE_STRICT",
+    "DOTENV_KEY",
+    "GA_MEASUREMENT_ID",
+    "GA_PROTOCOL_SECRET",
+    "GA_STREAM_ID",
+    "GITHUB_PAT",
+    "MY_GITHUB_PAT",
+    "NEXTAUTH_SECRET",
+    "NEXT_PUBLIC_CLOUDINARY_API_KEY",
+    "NEXT_PUBLIC_CLOUDINARY_API_SECRET",
+    "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME",
+    "NEXT_PUBLIC_GA_MEASUREMENT_ID",
+    "NEXT_PUBLIC_MEASUREMENT_PROTOCOL_SECRET",
+    "NEXT_PUBLIC_GA_PROTOCOL_SECRET",
+    "NEXT_PUBLIC_GA_STREAM_ID",
+    "NEXT_PUBLIC_VERCEL_ENV",
+    "NEXT_PUBLIC_VERCEL_GIT_PROVIDER",
+    "NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER",
+    "NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG",
+    "NEXT_PUBLIC_VERCEL_URL",
+    "NPM_RC",
+    "npm_config_user_agent",
+    "NO_COLOR",
+    "NODE_ENV",
+    "NPM_TOKEN",
+    "PORT",
+    "SECRET",
+    "VERCEL_ENV",
+    "VERCEL_GIT_PROVIDER",
+    "VERCEL_GIT_REPO_OWNER",
+    "VERCEL_GIT_REPO_SLUG",
+    "VERCEL_URL"
+  ]
+}
